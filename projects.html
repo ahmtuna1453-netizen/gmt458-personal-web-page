@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OpenLayers and Leaflet interactive maps.">
+  <title>Projects & Maps | GeoPortfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v10.6.1/ol.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">T</span> Tuna Türker</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="about.html">About</a><a class="active" href="projects.html">Projects & Maps</a>
+    </nav>
+  </header>
+  <main class="page-wrap">
+    <section class="page-intro">
+      <p class="eyebrow">INTERACTIVE CARTOGRAPHY</p>
+      <h1>Maps you can <span class="accent">explore.</span></h1>
+      <p class="lead">Two small web-map examples using OpenLayers and Leaflet. Zoom in to reveal the sample locations.</p>
+    </section>
+
+    <section class="map-section">
+      <div class="map-heading"><div><span class="map-index">01</span><h2>OpenLayers map</h2></div><span class="library-label">OPENLAYERS</span></div>
+      <p class="map-description">Sample points around Ankara. Markers are hidden at low zoom levels and appear when you zoom in.</p>
+      <div id="ol-map" class="map-frame" aria-label="OpenLayers map"></div>
+      <div class="map-footer"><span><i class="legend-dot"></i> Sample locations</span><span id="ol-zoom">Zoom: —</span></div>
+    </section>
+
+    <section class="map-section">
+      <div class="map-heading"><div><span class="map-index">02</span><h2>Leaflet map</h2></div><span class="library-label">LEAFLET</span></div>
+      <p class="map-description">A second map using Leaflet. The base layer is configured not to repeat the world horizontally.</p>
+      <div id="leaflet-map" class="map-frame" aria-label="Leaflet map"></div>
+      <div class="map-footer"><span><i class="legend-dot"></i> Sample locations</span><span id="leaflet-zoom">Zoom: —</span></div>
+    </section>
+
+    <section class="technical-notes">
+      <p class="eyebrow">IMPLEMENTATION NOTES</p>
+      <h2>Two common web-map issues</h2>
+      <div class="notes-grid">
+        <article><span class="note-number">A</span><h3>Marker visibility threshold</h3><p>The sample markers are only displayed at zoom level 11 or closer. This reduces clutter when the map is zoomed out. Try zooming in and out to test it.</p></article>
+        <article><span class="note-number">B</span><h3>Repeated world</h3><p>Leaflet's tile layer uses <code>noWrap: true</code> and geographic bounds. OpenLayers uses <code>wrapX: false</code> for the tile source and <code>multiWorld: false</code> for the view.</p></article>
+      </div>
+    </section>
+    <p class="small-note">Map tiles © OpenStreetMap contributors. Internet access is required to load the external map libraries and map tiles.</p>
+  </main>
+  <footer class="site-footer"><span>© 2026 Tuna Türker · GMT 458 Web GIS</span><span>Made with HTML, CSS & JavaScript</span></footer>
+  <script src="https://cdn.jsdelivr.net/npm/ol@v10.6.1/dist/ol.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="maps.js"></script>
+</body>
+</html>
